@@ -28,6 +28,7 @@ def main():
             port=PORT,
             url_path=BOT_TOKEN
         )
+        logging.info(SERVER_URL + BOT_TOKEN)
         updater.bot.set_webhook(SERVER_URL + BOT_TOKEN)
     updater.idle()
 
