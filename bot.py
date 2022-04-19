@@ -6,7 +6,7 @@ from callbacks import go, ping, help, ramil
 from constants import BOT_TOKEN, PORT, DEBUG, LOG_FORMAT, HEROKU_APP_NAME
 from helpers import Database
 
-database = None
+database = Database()
 
 
 def main():
@@ -33,5 +33,4 @@ def main():
 
 
 if __name__ == '__main__':
-    database = Database()
     main()
