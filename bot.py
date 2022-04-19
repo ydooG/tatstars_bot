@@ -22,6 +22,7 @@ def main():
         updater.start_polling()
     else:
         logging.basicConfig(format=LOG_FORMAT, level=logging.INFO)
+        logging.info(str(PORT))
         updater.start_webhook(
             listen='0.0.0.0',
             port=PORT,
