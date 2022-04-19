@@ -3,7 +3,7 @@ import logging
 from telegram.ext import Updater, Dispatcher, CommandHandler
 
 from callbacks import go, ping, help, ramil
-from constants import BOT_TOKEN, PORT, DEBUG, LOG_FORMAT, SERVER_URL
+from constants import BOT_TOKEN, PORT, DEBUG, LOG_FORMAT, HEROKU_APP_NAME
 from helpers import Database
 
 database = None
@@ -26,10 +26,9 @@ def main():
         updater.start_webhook(
             listen='0.0.0.0',
             port=PORT,
-            url_path=BOT_TOKEN
+            url_path=BOT_TOKEN,
+            webhook_url=f'https://{HEROKU_APP_NAME}.herokuapp.com/{BOT_TOKEN}'
         )
-        logging.info(SERVER_URL + BOT_TOKEN)
-        updater.bot.set_webhook(SERVER_URL + BOT_TOKEN)
     updater.idle()
 
 

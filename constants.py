@@ -9,8 +9,7 @@ def _get_users():
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 PORT = int(os.environ.get('PORT', '8443'))
 DEBUG = bool(int(os.environ.get('DEBUG', True)))
-SERVER_URL = os.environ.get('SERVER_URL')
-
+HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME')
 USERS = _get_users()
 
 DB_PATH = 'db.json'
